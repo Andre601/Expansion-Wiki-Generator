@@ -117,10 +117,15 @@
         if (!expansionName || !expansionPlaceholders) {
           return;
         }
+        
+        const spigot_link_regex = /https:\/\/www\.spigotmc\.org\/resources\/.+\.(\d+)/
+        const matchResults = expansionLink.match(spigot_link_regex);
+        
+        const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : expansionLink;
 
         const expansionOutputField = document.getElementById("output");
         
-        const result = "- ### **" + (expansionLink ? "[" : "") + expansionName + (expansionLink ? "](" + expansionLink + ")" : "") + "**\n" +
+        const result = "- ### **" + (link ? "[" : "") + expansionName + (link ? "](" + link + ")" : "") + "**\n" +
           "  > " + (expansionEcloud ? "/papi ecloud download " + expansionEcloud : "NO DOWNLOAD COMMAND") + "\n" +
           "  \n" + (expansionDescription ? "  " + expansionDescription + "\n\n" : "") +
           "  ```\n" +
