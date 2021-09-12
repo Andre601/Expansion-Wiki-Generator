@@ -1,0 +1,134 @@
+<!doctype html>
+<!--
+  psst. hey you.
+  quack.
+-->
+<html>
+  <head>
+    <title>Expansion Wiki Generator</title>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+
+    <meta name="description" content="A simple generator to create entries for PlaceholderAPI's Placeholders Wiki-page.">
+    <meta name="author" content="Andre_601">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Expansion Wiki Generator">
+    <meta name="twitter:description" content="A simple generator to create entries for PlaceholderAPI's Placeholders Wiki-page.">
+
+    <meta property="og:site_name" content="Expansion Wiki Generator">
+    <meta property="og:title" content="Expansion Wiki Generator">
+    <meta property="og:url" content="https://botl.ink">
+    <meta property="og:description" content="A simple generator to create entries for PlaceholderAPI's Placeholders Wiki-page.">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+  </head>
+
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <section id="main">
+        <header>
+          <h1><center>Expansion Wiki Generator</center></h1>
+          <p><center>This is a generator that allows you to create the markdown required for adding a new Expansion to the <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders" target="_blank">Placeholders page</a> of the PlaceholderAPI Wiki.</center></p>
+        </header>
+        <hr />
+
+        <h2>Before you start...</h2>
+        <p>
+        <ol>
+          <li>Made sure you <a href="https://github.com/PlaceholderAPI/PlaceholderAPI" target="_blank">forked the PlaceholderAPI repository</a></li>
+          <li>Switched to the <code>docs/wiki</code> branch</li>
+          <li>Made sure that the branch is up-to-date. (<a href="https://github.com/PlaceholderAPI/PlaceholderAPI/tree/docs/wiki/wiki#fetch-changes-from-upstream" target="_blank">How to update</a>)
+        </ol>
+        To use the generator, just input text into the textfields and check any boxes that match. Note that only inputs for Name and Placeholders are required!
+        <hr />
+        
+        <h2>Other notes</h2>
+        <p>
+        <ul>
+          <li>When you add your expansion to the page, remember to also add an entry in the list at the top.</li>
+          <li>Add <code>----</code> before and/or after your entry if there are other entries surounding it. (<a href="https://github.com/PlaceholderAPI/PlaceholderAPI/blob/docs/wiki/wiki/README.md#example" target="_blank">Example</a>)</li>
+          <li>If your expansion requires a plugin, make sure to also add this plugin to the <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/blob/docs/wiki/wiki/Plugins-using-PlaceholderAPI.md" target="_blank">Plugins using PlaceholderAPI page</a>.</li>
+        </ul>
+
+        <h2>Converter</h2>
+        <p>
+          <label for="expansionName">Name:</label>
+          <input id="expansionName" type="text" placeholder="MyExpansion" size="100%" onchange="updateOutput()" onkeyup="updateOutput()" required>
+        </p>
+        <p>
+          <label for="expansionLink">Link:</label>
+          <input id="expansionLink" type="text" placeholder="https://www.spigotmc.org/resources/6245/" size="100%" onchange="updateOutput()" onkeyup="updateOutput()">
+        </p>
+        <p>
+          <label for="expansioneCloud">eCloud name:</label>
+          <input id="expansioneCloud" type="text" placeholder="myexpansion" size="100%" onchange="updateOutput()" onkeyup="updateOutput()">
+        </p>
+        <p>
+          <label for="expansionDescription">Description:</label>
+          <input id="expansionDescription" type="text" placeholder="For more info visit [the docs](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki" size="100%" onchange="updateOutput()" onkeyup="updateOutput()">
+        </p>
+        <p>
+          <label for="expansionPlaceholders">Placeholders</label>
+          <textarea id="expansionPlaceholders" rows="5" size="100%" onchange="updateOutput()" onkeyup="updateOutput()" required></textarea>
+        </p>
+        <p>
+          <label for="output">Output:</label>
+          <textarea id="output" rows="8" type="text" size="100%" readonly></textarea>
+          <button id="copy" data-clipboard-target="#output">Copy</button>
+        </p>
+
+        <footer>
+          <p><center><a href="https://github.com/Andre601/Expansion-Wiki-Generator" target="_blank">GitHub (Source)</a> | Design by: <a href="http://html5up.net" target="_blank">HTML5 UP</a></center></p>
+        </footer>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      if ('addEventListener' in window) {
+        window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script type="application/javascript">
+      new ClipboardJS("#copy");
+      document.getElementById("copy").onclick = function () {
+        document.getElementById("copy").innerText = "Copied";
+      };
+      function updateOutput() {
+        const expansionName = document.getElementById("expansionName").value;
+        const expansionLink = document.getElementById("expansionLink").value;
+        const expansionEcloud = document.getElementById("expansioneCloud").value;
+        const expansionDescription = document.getElementById("expansionDescription").value;
+        const expansionPlaceholders = document.getElementById("expansionPlaceholders").value;
+
+        if (!expansionName || !expansionPlaceholders) {
+          return;
+        }
+
+        const expansionOutputField = document.getElementById("output");
+        
+        const result = "- ### **" + (expansionLink ? "[" : "") + expansionName + (expansionLink ? "](" + expansionLink + ")" : "") + "**\n" +
+          "  > " + (expansionEcloud ? "/papi ecloud download " + expansionEcloud : "NO DOWNLOAD COMMAND") + "\n" +
+          "  \n" + (expansionDescription ? expansionDescription + "\n\n" : "") +
+          "  ```\n" +
+          "  " + expansionPlaceholders.replace(/\n/g, "  \n") + "\n" +
+          "  ```";
+          
+        expansionOutputField.value = result;
+      }
+    </script>
+  </body>
+</html>
