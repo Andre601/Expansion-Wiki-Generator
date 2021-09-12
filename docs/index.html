@@ -64,7 +64,7 @@
 
         <h2>Generator</h2>
         <p>
-          <label for="expansionName">Name:</label>
+          <label for="expansionName">Name:*</label>
           <input id="expansionName" type="text" placeholder="MyExpansion" size="100%" onchange="updateOutput()" onkeyup="updateOutput()" required>
         </p>
         <p>
@@ -80,12 +80,15 @@
           <input id="expansionDescription" type="text" placeholder="For more info visit [the docs](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki" size="100%" onchange="updateOutput()" onkeyup="updateOutput()">
         </p>
         <p>
-          <label for="expansionPlaceholders">Placeholders</label>
-          <textarea id="expansionPlaceholders" rows="5" size="100%" onchange="updateOutput()" onkeyup="updateOutput()" required></textarea>
+          <label for="expansionPlaceholders">Placeholders:*</label>
+          <textarea id="expansionPlaceholders" placeholder="%myexpansion_placeholder%" rows="5" size="100%" onchange="updateOutput()" onkeyup="updateOutput()" required></textarea>
+        </p>
+        <p>
+          * = Required
         </p>
         <p>
           <label for="output">Output:</label>
-          <textarea id="output" rows="8" type="text" size="100%" readonly></textarea>
+          <textarea id="output" placeholder="Fill the above fields to get an output..." rows="8" type="text" size="100%" readonly></textarea>
           <button id="copy" data-clipboard-target="#output">Copy</button>
         </p>
 
