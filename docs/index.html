@@ -122,7 +122,7 @@
         
         const result = "- ### **" + (expansionLink ? "[" : "") + expansionName + (expansionLink ? "](" + expansionLink + ")" : "") + "**\n" +
           "  > " + (expansionEcloud ? "/papi ecloud download " + expansionEcloud : "NO DOWNLOAD COMMAND") + "\n" +
-          "  \n" + (expansionDescription ? expansionDescription + "\n\n" : "") +
+          "  \n" + (expansionDescription ? "  " + expansionDescription + "\n\n" : "") +
           "  ```\n" +
           "  " + expansionPlaceholders.replace(/\n/g, "  \n") + "\n" +
           "  ```";
