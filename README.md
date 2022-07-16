@@ -1,7 +1,7 @@
 # Expansion-Wiki-Generator
 This is a really simple Online generator that allows you to create the markdown for a new entry in the [Placeholders Wiki Page](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders).
 
-Please be sure to read [the Guide about contributing to the wiki](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/docs/wiki/wiki/README.md).
+Please be sure to read [the Guide about contributing to the wiki](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md).
 
 ## Credits
 - Theme by [Html5Up](https://html5up.net)
