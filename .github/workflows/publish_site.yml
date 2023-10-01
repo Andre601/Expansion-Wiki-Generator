@@ -1,0 +1,31 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/publish_site.yml'
+      - 'docs/**'
+      - 'requirements.txt'
+      - 'mkdocs.yml'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: pip install -r requirements.txt
+      - run: mkdocs build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          cname: papi.andre601.ch

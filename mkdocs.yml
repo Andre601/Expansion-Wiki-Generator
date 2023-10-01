@@ -1,0 +1,28 @@
+site_name: Expansion Wiki generator
+site_description: A simple tool to generate a new entry for the Placeholders wiki Page of PlaceholderAPI.
+site_author: Andre_601
+site_url: 'https://papi.andre601.ch'
+
+copyright: Licensed under the <a href="https://github.com/Andre601/Expansion-Wiki-Generator/blob/main/LICENSE">MIT License</a>.
+
+repo_name: 'Expansion-Wiki-Generator'
+repo_url: 'https://github.com/Andre601/Expansion-Wiki-Generator'
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+  logo: 'assets/images/favicon.png'
+  icon:
+    repo: 'simple/github'
+
+extra:
+  social:
+    - link: 'https://github.com/Andre601/Expansion-Wiki-Generator'
+      icon: 'simple/github'
+
+extra_css:
+  - assets/stylesheets/styling.css
+
+markdown_extensions:
+  - attr_list

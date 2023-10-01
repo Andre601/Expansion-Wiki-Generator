@@ -1,0 +1,47 @@
+:root{
+    --md-form-fg-color--required: #ff5252;
+}
+
+.md-typeset .md-form-required::after {
+    content: "*";
+    color: var(--md-form-fg-color--required);
+}
+
+.md-typeset .md-textarea {
+    border-radius: .1rem;
+}
+
+.md-typeset .md-textarea--stretch {
+    width: 100%;
+    border-bottom: .1rem solid var(--md-default-fg-color--lighter);
+    box-shadow: var(--md-shadow-z1);
+    font-size: .8rem;
+    height: 10rem;
+    padding: .3rem .6rem;
+    transition: border .25s,
+                box-shadow .25s;
+}
+
+.md-typeset .md-textarea:hover {
+    border-bottom-color: var(--md-accent-fg-color);
+    box-shadow: var(--md-shadow-z2)
+}
+
+button {
+    border: .1rem solid;
+    border-radius: .1rem;
+    color: var(--md-primary-fg-color);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 2em;
+    transition: color 125ms,
+                background-color 125ms,
+                border-color 125ms;
+}
+
+button:hover {
+    color: var(--md-accent-bg-color);
+    background-color: var(--md-accent-fg-color);
+    border-color: var(--md-accent-fg-color);
+}
