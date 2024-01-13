@@ -15,6 +15,16 @@ theme:
   logo: 'assets/images/favicon.png'
   icon:
     repo: 'simple/github'
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+
+nav:
+  - index.md
+  - Generators:
+    - generators/placeholder-list.md
+    - generators/plugin-list.md
 
 extra:
   social:
@@ -26,3 +36,4 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - md_in_html
