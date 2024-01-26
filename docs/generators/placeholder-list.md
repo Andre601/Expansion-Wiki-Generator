@@ -35,7 +35,7 @@ Below is the generator that you can use to create the markdown required for the 
 <input id="expansioneCloud" class="md-input md-input--stretch" type="text" placeholder="myexpansion">
 
 <label for="expansionDescription">Description:</label>
-<input id="expansionDescription" class="md-input md-input--stretch" type="text" placeholder="For more info visit &lbrack;the docs&rbrack;(https://github.com/PlaceholderAPI/PlaceholderAPI/wiki)">
+<input id="expansionDescription" class="md-input md-input--stretch" type="text" placeholder="For more info visit &lbrack;the docs&rbrack;(https://wiki.placeholderapi.com)">
 
 <input id="expansionHasPrevious" type="checkbox">
 <label for="expansionHasPrevious">Has entries before itself.</label>
