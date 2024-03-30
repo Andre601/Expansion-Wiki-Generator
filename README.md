@@ -1,9 +1,9 @@
-# Expansion-Wiki-Generator
-This is a really simple Online generator that allows you to create the markdown for a new entry in the [Placeholders Wiki Page](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders).
+# Expansion Wiki-Generator
 
-Please be sure to read [the Guide about contributing to the wiki](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md).
+This is a simple site used for generating new entries for an expansion on either the [Placeholder List](https://wiki.placeholderapi.com/users/placeholder-list/) or [List of Plugins using PlaceholderAPI](https://wiki.placeholderapi.com/users/plugins-using-placeholderapi/).
+
+It's recommended to read the [Guide on how to Contribute](https://github.com/PlaceholderAPI/PlaceholderAPI/blob/wiki/README.md) before starting anything.
 
 ## Credits
-- Theme by [Html5Up](https://html5up.net)
-- Favicon generated using [Favicon.io](https://favicon.io) and it's [Emoji Generator](https://favicon.io/emoji-favicons)
-- Icon "Gear" by [Twemoji](https://twemoji.twitter.com)
+
+- Site made using [MkDocs](https://mkdocs.org) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material) Theme.
