@@ -20,6 +20,8 @@
     padding: .3rem .6rem;
     transition: border .25s,
                 box-shadow .25s;
+                background-color: .25s;
+                border-color: .25s;
 }
 
 .md-typeset .md-textarea:hover {
