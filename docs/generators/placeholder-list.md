@@ -2,16 +2,7 @@
 
 This Generator is made for the [Placeholders List](https://wiki.placeholderapi.com/users/placeholder-list) page of the PlaceholderAPI wiki.
 
-## Before you start...
-
-Please make sure of the following:
-
-1. You forked the [PlaceholderAPI repository][papi-repo]
-2. You switched to the `wiki` branch of your fork.
-3. Your wiki branch (Or any branch you made from it) is up-to-date. [[How to update][update-branch]]
-
-To use this generator, input text into the different text fields.  
-The [output field](#output) will automatically update once you fill out the required fields.
+--8<-- "note.md"
 
 ## Additional notes
 
@@ -76,8 +67,12 @@ Below is the generator that you can use to create the markdown required for the 
     const expansionOutputField = document.getElementById("output");
     if (!expansionName || !expansionPlaceholders) {
         expansionOutputField.value = `Fields "Name" and "Placeholders" need to be filled out!`;
+        expansionOutputField.style.borderColor = `#ff5252`;
+        expansionOutputField.style.backgroundColor = `#ff52521a`;
         return;
     }
+    expansionOutputField.style.borderColor = `#00c853`;
+    expansionOutputField.style.backgroundColor = `#00c8531a`;
     const spigot_link_regex = /https:\/\/www\.spigotmc\.org\/resources\/.+\.(\d+)/;
     const matchResults = expansionLink.match(spigot_link_regex);
     const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : expansionLink;
