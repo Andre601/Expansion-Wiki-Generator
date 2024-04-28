@@ -76,8 +76,8 @@ Below is the generator that you can use to create the markdown required for the 
     const spigot_link_regex = /https:\/\/www\.spigotmc\.org\/resources\/.+\.(\d+)/;
     const matchResults = expansionLink.match(spigot_link_regex);
     const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : expansionLink;
-    const result = `${expansionCheckBefore ? `----\n\n` : ``}- ### **${link ? `[${expansionName}](${link})` : `${expansionName}`}**
-${expansioneCloud ? `    > /papi ecloud download ${expansioneCloud}` : `    > NO DOWNLOAD COMMAND`}
+    const result = `${expansionCheckBefore ? `----\n\n` : ``}- ### **${link ? `[${expansionName}](${link.replace(/\s/g, '%20')})` : `${expansionName}`}**
+${expansioneCloud ? `    > /papi ecloud download ${expansioneCloud.replace(/\s/g, '-')}` : `    > NO DOWNLOAD COMMAND`}
 ${expansionDescription ? `\n    ${expansionDescription}\n` : ``}
     \`\`\`
     ${expansionPlaceholders.replace(/\n/g, '\n    ')}
