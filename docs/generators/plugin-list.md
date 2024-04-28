@@ -4,15 +4,9 @@ This Generator is made for the [Plugins using PlaceholderAPI](https://wiki.place
 
 --8<-- "note.md"
 
-## Additional notes
-
-- Remember to also add a new entry to the list of expansions at the top of the placeholders page.
-- Add `----` before and/or after your entry if there are other expansions listed before/after you. [[Example][entries-example]]
-- If your expansion requires a plugin, make sure to also add this plugin to the [`Plugins using PlaceholderAPI` page][plugins-page]
-
 ## Generator
 
-Below is the generator that you can use to create the markdown required for the Placeholders Wiki Page.
+Below is the generator that you can use to create the markdown required for the Plugins using PlaceholderAPI Wiki Page.
 
 <span style="color: var(--md-form-fg-color--required)">*</span> = Required
 
