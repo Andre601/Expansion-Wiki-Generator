@@ -59,7 +59,7 @@ Below is the generator that you can use to create the markdown required for the 
   function updateOutput() {
     const expansionName = document.getElementById("expansionName").value;
     const expansionLink = document.getElementById("expansionLink").value;
-    const expansioneCloud = document.getElementById("expansioneCloud").value;
+    const expansionCloud = document.getElementById("expansioneCloud").value;
     const expansionDescription = document.getElementById("expansionDescription").value;
     const expansionCheckBefore = document.getElementById("expansionHasPrevious").checked;
     const expansionCheckAfter = document.getElementById("expansionHasAfter").checked;
@@ -76,12 +76,13 @@ Below is the generator that you can use to create the markdown required for the 
     const spigot_link_regex = /https:\/\/www\.spigotmc\.org\/resources\/.+\.(\d+)/;
     const matchResults = expansionLink.match(spigot_link_regex);
     const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : expansionLink;
-    const result = `${expansionCheckBefore ? `----\n\n` : ``}- ### **${link ? `[${expansionName}](${link.replace(/\s/g, '%20')})` : `${expansionName}`}**
-${expansioneCloud ? `    > /papi ecloud download ${expansioneCloud.replace(/\s/g, '-')}` : `    > NO DOWNLOAD COMMAND`}
-${expansionDescription ? `\n    ${expansionDescription}\n` : ``}
-    \`\`\`
-    ${expansionPlaceholders.replace(/\n/g, '\n    ')}
-    \`\`\`${expansionCheckAfter ? `\n\n----` : ``}`;
+    const result = `${expansionCheckBefore ? `----\n\n` : ``}### **${link ? `[${expansionName}](${link.replace(/\s/g, '%20')})` : `${expansionName}`}**
+/// ${expansionCloud ? `${expansionCloud.startsWith('https://') ? `download | ${expansionCloud.replace(/\s/g, '%20')}` : `command | papi ecloud download ${expansionCloud.replace(/\s/g, '-')}`}` : `integrated | Built into Plugin`}
+///
+${expansionDescription ? `\n${expansionDescription}\n` : ``}
+\`\`\`
+${expansionPlaceholders.replace(/\n/g, '\n    ')}
+\`\`\`${expansionCheckAfter ? `\n\n----` : ``}`;
     expansionOutputField.value = result;
   }
 </script>
