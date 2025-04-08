@@ -81,7 +81,7 @@ Below is the generator that you can use to create the markdown required for the 
 ///
 ${expansionDescription ? `\n${expansionDescription}\n` : ``}
 \`\`\`
-${expansionPlaceholders.replace(/\n/g, '\n    ')}
+${expansionPlaceholders}
 \`\`\`${expansionCheckAfter ? `\n\n----` : ``}`;
     expansionOutputField.value = result;
   }
