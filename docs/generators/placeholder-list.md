@@ -16,30 +16,77 @@ Below is the generator that you can use to create the markdown required for the 
 
 <span style="color: var(--md-form-fg-color--required)">*</span> = Required
 
-<label for="expansionName" class="md-form-required">Name:</label>
-<input id="expansionName" class="md-input md-input--stretch" type="text" placeholder="MyExpansion" required>
+/// html | label.md-form-required[for="expansionName"]
+Name:
+///
+/// html | input.md-input.md-input--stretch#expansionName[type="text" placeholder="MyExpansion" required]
+///
 
-<label for="expansionLink">Link:</label>
-<input id="expansionLink" class="md-input md-input--stretch" type="text" placeholder="https://www.spigotmc.org/resources/6245">
+/// html | p
+///
 
-<label for="expansioneCloud">eCloud name:</label>
-<input id="expansioneCloud" class="md-input md-input--stretch" type="text" placeholder="myexpansion">
+/// html | label[for="expansionLink"]
+Plugin Link:
+///
+/// html | input.md-input.md-input--stretch#expansionLink[type="text" placeholder="https://www.spigotmc.org/resources/6245"]
+///
 
-<label for="expansionDescription">Description:</label>
-<input id="expansionDescription" class="md-input md-input--stretch" type="text" placeholder="For more info visit &lbrack;the docs&rbrack;(https://wiki.placeholderapi.com)">
+/// html | p
+///
 
-<input id="expansionHasPrevious" type="checkbox">
-<label for="expansionHasPrevious">Has entries before itself.</label>
+/// html | label[for="expansioneCloud"]
+eCloud Name / Download Link:
+///
+/// html | input.md-input.md-input--stretch#expansioneCloud[type="text" placeholder="myexpansion"]
+///
 
-<input id="expansionHasAfter" type="checkbox">
-<label for="expansionHasAfter">Has entries after itself.</label>
+/// html | p
+///
 
-<label for="expansionPlaceholders" class="md-form-required">Placeholders:</label>
-<textarea id="expansionPlaceholders" class="md-textarea md-textarea--stretch" type="text" placeholder="%myexpansion_placeholder%"></textarea>
+/// html | label[for="expansionDescription"]
+Description:
+///
+/// html | input.md-input.md-input--stretch#expansionDescription[type="text" placeholder="For more info visit [the docs](https://wiki.placeholderapi)"]
+///
 
-<label for="output">Output:</label>
-<textarea id="output" class="md-textarea md-textarea--stretch" type="text" placeholder="Fill the above fields to get an output..." readonly></textarea>
-<button id="copy" data-clipboard-target="#output">Copy</button>
+/// html | p
+///
+
+/// html | input#expansionHasPrevious[type="checkbox"]
+///
+/// html | label[for="expansionHasPrevious"]
+Has entries before itself.
+///
+
+/// html | p
+///
+
+/// html | input#expansionHasAfter[type="checkbox"]
+///
+/// html | label[for="expansionHasAfter"]
+Has entries after itself.
+///
+
+/// html | p
+///
+
+/// html | label.md-form-required[for="expansionPlaceholders"]
+Placeholders:
+///
+/// html | textarea.md-textarea.md-textarea--stretch#expansionPlaceholders[type="text" placeholder="%myexpansion_placeholder%"]
+///
+
+/// html | p
+///
+
+/// html | label[for="output"]
+Output:
+///
+/// html | textarea.md-textarea.md-textarea--stretch#output[type="text" placeholder="Fill the above fields to get an output..." readonly]
+///
+/// html | button#copy[data-clipboard-target="#output"]
+Copy
+///
 
 <script>
   if ('addEventListener' in window) {

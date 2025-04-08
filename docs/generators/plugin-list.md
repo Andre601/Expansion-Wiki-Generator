@@ -10,21 +10,50 @@ Below is the generator that you can use to create the markdown required for the 
 
 <span style="color: var(--md-form-fg-color--required)">*</span> = Required
 
-<label for="pluginName" class="md-form-required">Plugin name:</label>
-<input id="pluginName" class="md-input md-input--stretch" type="text" placeholder="MyPlugin" required>
+/// html | label.md-form-required[for="pluginName"]
+Plugin Name:
+///
+/// html | input.md-input.md-input--stretch#pluginName[type="text" placeholder="MyPlugin" required]
+///
 
-<label for="pluginLink">Link:</label>
-<input id="pluginLink" class="md-input md-input--stretch" type="text" placeholder="https://www.spigotmc.org/resources/6245">
+/// html | p
+///
 
-<input id="pluginSupportsPlaceholders" type="checkbox">
-<label for="pluginSupportsPlaceholders">Plugin supports other placeholders.</label>
+/// html | label[for="pluginLink"]
+Plugin Link:
+///
+/// html | input.md-input.md-input--stretch#pluginLink[type="text" placeholder="https://www.spigotmc.org/resources/6245"]
+///
 
-<label for="pluginExpansion">Expansion name:</label>
-<input id="pluginExpansion" class="md-input md-input--stretch" type="text" placeholder="myexpansion">
+/// html | p
+///
 
-<label for="output">Output:</label>
-<textarea id="output" class="md-textarea md-textarea--stretch" type="text" placeholder="Fill the above fields to get an output..." readonly></textarea>
-<button id="copy" data-clipboard-target="#output">Copy</button>
+/// html | input#pluginSupportsPlaceholders[type="checkbox"]
+///
+/// html | label[for="pluginSupportsPlaceholders"]
+Plugin supports other placeholders.
+///
+
+/// html | p
+///
+
+/// html | label[for="pluginExpansion"]
+Plugin Expansion Name:
+///
+/// html | input.md-input.md-input--stretch#pluginExpansion[type="text" placeholder="myexpansion"]
+///
+
+/// html | p
+///
+
+/// html | label[for="output"]
+Output:
+///
+/// html | textarea.md-textarea.md-textarea--stretch#output[type="text" placeholder="Fill the above fields to get an output..." readonly]
+///
+/// html | button#copy[data-clipboard-target="#output"]
+Copy
+///
 
 <script>
   if ('addEventListener' in window) {

@@ -39,3 +39,4 @@ markdown_extensions:
   - md_in_html
   - pymdownx.snippets:
       base_path: '.snippets'
+  - pymdownx.blocks.html:

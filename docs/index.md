@@ -6,8 +6,8 @@ They allow you to generate the necessary content for the wiki's [Placeholder Lis
 
 ## Generators
 
-<div class="grid cards" markdown>
 
+/// html | div.grid.cards
 -   [**Placeholder List Generator**](generators/placeholder-list.md)
     
     ----
@@ -19,5 +19,4 @@ They allow you to generate the necessary content for the wiki's [Placeholder Lis
     ----
     
     Generator for the Plugins using PlaceholderAPI List of the Wiki
-
-</div>
+///
