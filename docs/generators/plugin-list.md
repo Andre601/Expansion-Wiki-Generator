@@ -28,6 +28,15 @@ Plugin Link:
 /// html | p
 ///
 
+/// html | input#isHytaleMod[type="checkbox"]
+///
+/// html | label[for="isHytaleMod"]
+Is Hytale Mod
+///
+
+/// html | p
+///
+
 /// html | input#pluginSupportsPlaceholders[type="checkbox"]
 ///
 /// html | label[for="pluginSupportsPlaceholders"]
@@ -73,6 +82,7 @@ Copy
   function updateOutput() {
     const pluginName = document.getElementById("pluginName").value;
     const pluginLink = document.getElementById("pluginLink").value;
+    const isHytaleMod = document.getElementById("isHytaleMod").checked;
     const pluginSupportsPlaceholders = document.getElementById("pluginSupportsPlaceholders").checked;
     const pluginExpansion = document.getElementById("pluginExpansion").value;
     const expansionOutputField = document.getElementById("output");
@@ -89,7 +99,7 @@ Copy
     const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : pluginLink;
     const result = `- ${link ? `[${pluginName}](${link})` : `${pluginName}`}
     - [${pluginSupportsPlaceholders ? `x` : ` `}] Supports placeholders.
-    - [${pluginExpansion ? `x` : ` `}] Provides own placeholders. [${pluginExpansion ? `[**Link**](placeholder-list.md#${pluginExpansion.toLowerCase().replace(/\s/g, '-')})` : `Link`}]`;
+    - [${pluginExpansion ? `x` : ` `}] Provides own placeholders. [${pluginExpansion ? `[**Link**](../placeholder-list/${isHytaleMod ? `hytale` : `minecraft`}.md#${pluginExpansion.toLowerCase().replace(/\s/g, '-')})` : `Link`}]`;
     expansionOutputField.value = result;
   }
 </script>
