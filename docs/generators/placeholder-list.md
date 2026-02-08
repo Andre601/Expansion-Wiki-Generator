@@ -52,6 +52,15 @@ Description:
 /// html | p
 ///
 
+/// html | input#expansionIsHytale[type="checkbox"]
+///
+/// html | label[for="expansionIsHytale"]
+Is Hytale Expansion.
+///
+
+/// html | p
+///
+
 /// html | input#expansionHasPrevious[type="checkbox"]
 ///
 /// html | label[for="expansionHasPrevious"]
@@ -108,6 +117,7 @@ Copy
     const expansionLink = document.getElementById("expansionLink").value;
     const expansionCloud = document.getElementById("expansioneCloud").value;
     const expansionDescription = document.getElementById("expansionDescription").value;
+    const expansionCheckHytale = document.getElementById("expansionIsHytale").checked;
     const expansionCheckBefore = document.getElementById("expansionHasPrevious").checked;
     const expansionCheckAfter = document.getElementById("expansionHasAfter").checked;
     const expansionPlaceholders = document.getElementById("expansionPlaceholders").value;
@@ -124,7 +134,7 @@ Copy
     const matchResults = expansionLink.match(spigot_link_regex);
     const link = matchResults ? "https://www.spigotmc.org/resources/" + matchResults[1] : expansionLink;
     const result = `${expansionCheckBefore ? `----\n\n` : ``}### **${link ? `[${expansionName}](${link.replace(/\s/g, '%20')})` : `${expansionName}`}**
-/// ${expansionCloud ? `${expansionCloud.startsWith('https://') ? `download | ${expansionCloud.replace(/\s/g, '%20')}` : `command | papi ecloud download ${expansionCloud.replace(/\s/g, '-')}`}` : `integrated | Built into Plugin`}
+/// ${expansionCloud ? `${expansionCloud.startsWith('https://') ? `download | ${expansionCloud.replace(/\s/g, '%20')}` : `command | papi ecloud download ${expansionCloud.replace(/\s/g, '-')}`}` : `integrated | Built into ${expansionCheckHytale ? `Mod` : `Plugin` }`}
 ///
 ${expansionDescription ? `\n${expansionDescription}\n` : ``}
 \`\`\`
